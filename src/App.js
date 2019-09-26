@@ -1,21 +1,18 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-import QuestionBody from './QuestionBody';
+import React from "react";
+import "./App.css";
+import ContentBody from "./ContentBody";
 
 function App() {
   return (
-    <div className="TriviApp">
+    <div className="app">
       <header className="header">
-        TriviApp
+        <h1>TriviApp</h1>
       </header>
-
       <body className="body">
-        <QuestionBody/>
+        <ContentBody />
       </body>
-
       <footer className="footer">
-        Written by Erik Erdahl Lange
+        <h2>© Erik Erdahl Lange</h2>
       </footer>
     </div>
   );

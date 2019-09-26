@@ -1,23 +1,65 @@
+.app {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+}
+
+.header, footer {
+  background-color: #DB7B00;
+  left: 0;
+  padding: 10px;
+  width: 100%;
+
+}
+
 .header {
   width: 100%;
   top: 0;
-  left: 0;
-  background-color: aquamarine;
-  padding: 20px;
-  text-align: center;
+
 }
 
 .body {
-  height: 100%;
-
+  flex: 1;
+  background-color: #DAB808;
 }
 
 .footer {
   position: absolute;
-  width: 100%;
   bottom: 0;
-  left: 0;
-  background-color: aquamarine;
-  padding: 20px;
+}
+
+.body-column {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.body-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
+
+.row-cell {
+}
+
+/* MEDIA QUERY IF IT DOESNT FIT, MAKE THE TOP BUTTONS A COLUMN */
+button {
+  border: none;
+  border-radius: 20px;
+  padding: 12px 35px;
+  font-size: 20px;
+  text-decoration: none;
+  display: inline-block;
+  margin: 20px;
+}
+
+p, h1, h2, h3 {
   text-align: center;
 }
