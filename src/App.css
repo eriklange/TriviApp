@@ -43,7 +43,6 @@ header, footer {
   width: 100%;
 }
 
-/* MEDIA QUERY IF IT DOESNT FIT, MAKE THE TOP BUTTONS A COLUMN */
 button {
   border: none;
   border-radius: 20px;

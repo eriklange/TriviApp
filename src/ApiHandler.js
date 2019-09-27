@@ -12,7 +12,7 @@ class ApiHandler {
     }
 
     this.apiCalls["Useless Facts"] = {
-      format: this.catFact,
+      format: this.uselessFact,
       link: "https://uselessfacts.jsph.pl/random.json?language=en"
     }
 
@@ -33,16 +33,12 @@ class ApiHandler {
       })
   }
 
-  catFact(data) {
+  uselessFact(data) {
     return new TextStorage(data.text, null)
   }
 
   dadJoke(data) {
     return new TextStorage(data.setup, data.punchline);
-  }
-
-  getRandomJoke(){
-
   }
 
   progJoke(data) {
