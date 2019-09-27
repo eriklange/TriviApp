@@ -13,16 +13,17 @@ header, footer {
   width: 100%;
 }
 
-.header {
+header {
   width: 100%;
   top: 0;
 }
 
-.body {
+body {
+  margin: 0;
   flex: 1;
 }
 
-.footer {
+footer {
   position: absolute;
   bottom: 0;
 }
