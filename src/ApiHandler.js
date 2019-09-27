@@ -1,27 +1,53 @@
-import React from "react";
+import TextStorage from "./TextStorage";
 const axios = require("axios");
 
 class ApiHandler {
-  getNewInfo() {}
+  constructor(textField) {
+    this.textField = textField;
 
-  getCatFact() {
-    axios
-      .get("https://sv443.net/jokeapi/category/programming")
-      .then(function(response) {
-        // handle success
-        console.log(response);
-      })
-      .catch(function(error) {
-        // handle error
-        console.log(error);
-      })
-      .finally(function() {
-        // always executed
-      });
+    this.apiCalls = {}
+    this.apiCalls["Programming Jokes"] = {
+      format: this.progJoke,
+      link: "https://sv443.net/jokeapi/category/programming"
+    }
+
+    this.apiCalls["Useless Facts"] = {
+      format: this.catFact,
+      link: "https://uselessfacts.jsph.pl/random.json?language=en"
+    }
+
+    this.apiCalls["Dad Jokes"] = {
+      format: this.dadJoke,
+      link: "https://us-central1-dadsofunny.cloudfunctions.net/DadJokes/random/jokes"
+    }
   }
 
-  updateTextField(text){
+  getNewInfo(buttonStatus) {
+    let joke = buttonStatus[Math.floor(Math.random() * buttonStatus.length)];
+    let jokeInfo = this.apiCalls[joke.text];
 
+    return axios
+      .get(jokeInfo.link)
+      .then(response => {
+        return jokeInfo.format(response.data);
+      })
+  }
+
+  catFact(data) {
+    return new TextStorage(data.text, null)
+  }
+
+  dadJoke(data) {
+    return new TextStorage(data.setup, data.punchline);
+  }
+
+  getRandomJoke(){
+
+  }
+
+  progJoke(data) {
+    let newText = typeof data.joke !== 'undefined' ? data.joke : data.setup;
+    return new TextStorage(newText, data.delivery);
   }
 }
 

@@ -1,39 +1,35 @@
 import React, { Component } from "react";
 
-const notSelected = {
-  background: "#621708",
-  text: "#c8f7c5"
-};
-
-const selected = {
-  background: "#9BE564",
-  text: "#1c2833"
-};
-
 class CheckButton extends Component {
   constructor(props) {
     super(props);
-    this.state = { checked: !this.props.initActive };
+    this.buttonState = this.props.state;
+    this.state = { checked: this.buttonState.checked };
     this.onClick = this.onClick.bind(this);
+
   }
 
   onClick() {
+    this.props.state.checked = !this.props.state.checked;
     this.setState(state => ({
       checked: !state.checked
     }));
+
+    this.checked = this.state.checked;
+  }
+
+  isChecked() {
+    return this.checked;
   }
 
   render() {
-    var colorScheme = this.state.checked ? selected : notSelected;
     return (
       <button
-        style={{ backgroundColor: colorScheme.background }}
-        onClick={this.onClick}
-      >
-        <p style={{ color: colorScheme.text }}>{this.props.title}</p>
+        style={{ backgroundColor: this.buttonState.bgColor() }}
+        onClick={this.onClick}>
+          <p style={{ color: this.buttonState.txtColor() }}>{this.buttonState.text}</p>
       </button>
     );
   }
 }
-
 export default CheckButton;

@@ -29,24 +29,21 @@
 }
 
 .body-column {
+
   height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
 
-  margin-left: 5%;
-  margin-right: 5%;
+  margin: 5%;
 }
 
 .body-row {
-  padding-top: 100px;
+  border: 1px black;
   display: flex;
   flex-direction: row;
   justify-content: center;
   width: 100%;
-}
-
-.row-cell {
 }
 
 /* MEDIA QUERY IF IT DOESNT FIT, MAKE THE TOP BUTTONS A COLUMN */
@@ -61,6 +58,7 @@ button {
 }
 
 p, h1, h2, h3 {
+  white-space: pre-line;
   color: #c5eff7;
   text-align: center;
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
@@ -68,4 +66,9 @@ p, h1, h2, h3 {
 
 h1 {
   font-size: 50px;
+}
+
+#trivia-text-field {
+  display: flex;
+  flex-direction: column;
 }
