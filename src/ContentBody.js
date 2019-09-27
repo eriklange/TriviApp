@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import CheckButton from "./CheckButton";
-import GetInfoButton from "./GetInfoButton";
 import ApiHandler from "./ApiHandler";
 import CheckButtonState from "./CheckButtonState";
 import TriviaText from "./TriviaText";
@@ -15,7 +14,7 @@ class ContentBody extends Component {
 
     this.apiHandler = new ApiHandler();
     this.initLayout = this.initLayout.bind(this);
-    this.updateField = this.updateField.bind(this);
+    this.updateTextField = this.updateTextField.bind(this);
     this.initLayout();
   }
 
@@ -44,22 +43,22 @@ class ContentBody extends Component {
         </div>
         <TriviaText text={this.state.text} subtext={this.state.subtext}></TriviaText>
         <div id="check-buttons" className="body-row">
-          <GetInfoButton
-            title="Get New Trivia"
-            handleClick={this.updateField}
-          />
+
+          <button style={{ backgroundColor: "#282B28" }} onClick={this.updateTextField}>
+            <p>{"Get New Trivia"}</p>
+          </button>
         </div>
       </div>
     );
   }
 
-  getCheckButtons(){
+  getCheckButtons() {
     return Object.keys(this.checkedButtons).map((key) => {
       return this.checkedButtons[key].button;
     });
   }
 
-  updateField() {
+  updateTextField() {
     var buttonCheckedStates = Object.keys(this.checkedButtons)
       .filter((key) => {
         return this.checkedButtons[key].btnState.checked
@@ -70,14 +69,14 @@ class ContentBody extends Component {
 
     if (buttonCheckedStates.length === 0) {
       this.updateFieldWithData(TextStorage.default());
-    }else{
+    } else {
       this.apiHandler.getNewInfo(buttonCheckedStates).then(data => {
         this.updateFieldWithData(data);
       })
     }
   }
 
-  updateFieldWithData(data){
+  updateFieldWithData(data) {
     this.setState({
       text: data.text,
       subtext: data.subtext
