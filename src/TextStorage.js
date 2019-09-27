@@ -9,5 +9,4 @@ class TextStorage {
     }
   }
   
-
   export default TextStorage;

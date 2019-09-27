@@ -4,19 +4,18 @@
   display: flex;
   flex-direction: column;
   background-color: #D36135;
+  overflow: hidden;
 }
 
-.header, footer {
+header, footer {
   left: 0;
   padding: 10px;
   width: 100%;
-
 }
 
 .header {
   width: 100%;
   top: 0;
-
 }
 
 .body {
@@ -29,17 +28,15 @@
 }
 
 .body-column {
-
   height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: start;
 
   margin: 5%;
 }
 
 .body-row {
-  border: 1px black;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -65,10 +62,41 @@ p, h1, h2, h3 {
 }
 
 h1 {
-  font-size: 50px;
+  font-size: 200%;
 }
 
 #trivia-text-field {
   display: flex;
   flex-direction: column;
+
+  height: 20%;
+}
+
+@media (max-width: 700px) {
+
+  .body-row {
+    align-content: center;
+    flex-direction: column;
+    justify-content: start;
+
+
+  }
+
+  button {
+    align-self: center;
+    width: 75%;
+    padding: 0px 5px;
+  }
+
+  header, footer {
+    padding: 0px;
+  }
+
+  h2, p {
+    font-size: 100%;
+  }
+
+  h3 {
+    font-size: 80%;
+  }
 }

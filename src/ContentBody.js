@@ -10,7 +10,7 @@ class ContentBody extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      text: "1"
+      text: TextStorage.default().text
     }
 
     this.apiHandler = new ApiHandler();
@@ -39,14 +39,11 @@ class ContentBody extends Component {
   render() {
     return (
       <div className="body-column">
-        <h3>Select what type of joke or fact you want</h3>
         <div className="body-row">
-          {Object.keys(this.checkedButtons).map((key) => {
-            return this.checkedButtons[key].button;
-          })}
+          {this.getCheckButtons()}
         </div>
         <TriviaText text={this.state.text} subtext={this.state.subtext}></TriviaText>
-        <div className="body-row">
+        <div id="check-buttons" className="body-row">
           <GetInfoButton
             title="Get New Trivia"
             handleClick={this.updateField}
@@ -54,6 +51,12 @@ class ContentBody extends Component {
         </div>
       </div>
     );
+  }
+
+  getCheckButtons(){
+    return Object.keys(this.checkedButtons).map((key) => {
+      return this.checkedButtons[key].button;
+    });
   }
 
   updateField() {
