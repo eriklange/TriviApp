@@ -12,12 +12,12 @@ If a user selects more than one option, a random "type" is selected.
 
 ## Installation & Usage
 
-1. Clone the repo
-`git clone https://github.uio.no/erikela/TriviApp.git`
-`cd TriviApp`
+1. Clone the repo</br>
+`$ git clone https://github.uio.no/erikela/TriviApp.git`</br>
+`$ cd TriviApp`
 
-2. Install dependancies
-`npm install`
+2. Install dependencies</br>
+`$ npm install`  
 
-3. Start the App
-`npm start`
+3. Start the App</br>
+`$ npm start`  
