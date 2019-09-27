@@ -2,7 +2,6 @@ import React from "react";
 const axios = require("axios");
 
 class ApiHandler {
-
   getNewInfo() {}
 
   getCatFact() {
@@ -19,6 +18,10 @@ class ApiHandler {
       .finally(function() {
         // always executed
       });
+  }
+
+  updateTextField(text){
+
   }
 }
 

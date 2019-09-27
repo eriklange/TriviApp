@@ -3,10 +3,10 @@
   width: 100vw;
   display: flex;
   flex-direction: column;
+  background-color: #D36135;
 }
 
 .header, footer {
-  background-color: #DB7B00;
   left: 0;
   padding: 10px;
   width: 100%;
@@ -21,7 +21,6 @@
 
 .body {
   flex: 1;
-  background-color: #DAB808;
 }
 
 .footer {
@@ -33,13 +32,14 @@
   height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: center;
 
   margin-left: 5%;
   margin-right: 5%;
 }
 
 .body-row {
+  padding-top: 100px;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -61,5 +61,11 @@ button {
 }
 
 p, h1, h2, h3 {
+  color: #c5eff7;
   text-align: center;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+h1 {
+  font-size: 50px;
 }

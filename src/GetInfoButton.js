@@ -8,16 +8,13 @@ class GetInfoButton extends Component {
   }
 
   onClick() {
-      console.log("hi");
+    console.log("hi");
     this.props.handleClick("yoyo");
   }
 
   render() {
     return (
-      <button
-        style={{ backgroundColor: "yellow" }}
-        onClick={this.onClick}
-      >
+      <button style={{ backgroundColor: "#282B28" }} onClick={this.onClick}>
         <p>{this.props.title}</p>
       </button>
     );
