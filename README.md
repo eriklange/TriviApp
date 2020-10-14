@@ -14,7 +14,7 @@ If a user selects more than one option, a random "type" is selected.
 ## Installation & Usage
 
 1. Clone the repo</br>
-`$ git clone https://github.uio.no/erikela/TriviApp.git`</br>
+`$ git clone https://github.com/eriklange/TriviApp.git`</br>
 `$ cd TriviApp`
 
 2. Install dependencies</br>
