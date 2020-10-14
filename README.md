@@ -1,6 +1,7 @@
 # TriviApp
 An app for visualising jokes and funfacts!
 
+This was an assignment for the course [Development in platform ecosystems ](https://www.uio.no/studier/emner/matnat/ifi/IN5320/) at University of Oslo.
 ## Features
 A user can select up to three types of jokes / facts
 * Programming Jokes
